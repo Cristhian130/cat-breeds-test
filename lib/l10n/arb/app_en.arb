@@ -1,7 +1,47 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
-    }
+    "breedsTitle": "Cat breeds",
+    "@breedsTitle": {
+        "description": "Title of the cat breeds page"
+    },
+    "breedsComingSoon": "The breed catalog is coming soon.",
+    "@breedsComingSoon": {
+        "description": "Placeholder shown until the catalog is implemented"
+    },
+    "exploreTitle": "Explore Cat Breeds",
+    "@exploreTitle": {
+        "description": "Heading in the breed exploration hero and section"
+    },
+    "exploreSubtitle": "Search and list 100+ cat breeds with ease.",
+    "@exploreSubtitle": {
+        "description": "Supporting text in the breed exploration hero and section"
+    },
+    "heroCatImageLabel": "Cat breed photograph",
+    "@heroCatImageLabel": {
+        "description": "Accessible label for the breed hero photograph"
+    },
+    "searchBreedsHint": "Search breeds in English",
+    "originLabel": "Country of origin",
+    "intelligenceLabel": "Intelligence",
+    "notAvailable": "Not available",
+    "noBreeds": "No breeds are available yet.",
+    "noSearchResults": "No breeds match your search.",
+    "loadingBreeds": "Loading breeds…",
+    "connectionError": "Check your connection and try again.",
+    "accessDenied": "The API rejected access. Check your API key.",
+    "rateLimit": "The API request limit was reached. Try again later.",
+    "searchTooLong": "Search using 30 characters or fewer.",
+    "genericError": "We could not load the breeds. Try again.",
+    "retry": "Retry",
+    "loadMore": "Load more breeds",
+    "moreDetails": "More…",
+    "breedDetailTitle": "Breed details",
+    "backToCatalog": "Back to breeds",
+    "loadingBreed": "Loading breed…",
+    "breedNotFound": "This breed was not found.",
+    "descriptionLabel": "Description",
+    "descriptionMissing": "Description not available.",
+    "adaptabilityLabel": "Adaptability",
+    "lifeSpanLabel": "Life span",
+    "yearsLabel": "years"
 }

@@ -3,31 +3,35 @@ import 'package:cat_breeds/core/config/flavor.dart';
 /// Configuración pública e inmutable de una ejecución de la aplicación.
 ///
 /// Los valores de [String.fromEnvironment] se definen al compilar con
-/// `--dart-define`. No incluyas secretos aquí: el binario de una app móvil o
-/// web siempre puede inspeccionarse.
+/// `--dart-define-from-file`. La clave no se guarda en Git, pero una app móvil
+/// o web compilada siempre puede inspeccionarse.
 class AppConfig {
-  const AppConfig({
+  const new({
     required this.flavor,
     required this.apiBaseUrl,
+    required this.apiKey,
     required this.enableVerboseLogging,
     required this.enableDeveloperTools,
   });
 
-  const AppConfig.development()
+  const new development()
     : flavor = Flavor.development,
       apiBaseUrl = _developmentApiBaseUrl,
+      apiKey = _apiKey,
       enableVerboseLogging = true,
       enableDeveloperTools = true;
 
-  const AppConfig.staging()
+  const new staging()
     : flavor = Flavor.staging,
       apiBaseUrl = _stagingApiBaseUrl,
+      apiKey = _apiKey,
       enableVerboseLogging = true,
       enableDeveloperTools = false;
 
-  const AppConfig.production()
+  const new production()
     : flavor = Flavor.production,
       apiBaseUrl = _productionApiBaseUrl,
+      apiKey = _apiKey,
       enableVerboseLogging = false,
       enableDeveloperTools = false;
 
@@ -36,6 +40,9 @@ class AppConfig {
 
   /// URL pública del API. Debe ser HTTPS y no contener credenciales.
   final String apiBaseUrl;
+
+  /// Valor para el encabezado `x-api-key` cuando se conecte el cliente HTTP.
+  final String apiKey;
 
   /// Permite logs de transiciones de BLoC y diagnósticos de desarrollo.
   final bool enableVerboseLogging;
@@ -47,16 +54,18 @@ class AppConfig {
 
   static const _developmentApiBaseUrl = String.fromEnvironment(
     'API_BASE_URL',
-    defaultValue: 'https://api.dev.catbreeds.invalid',
+    defaultValue: 'https://api.thecatapi.com/v1',
   );
 
   static const _stagingApiBaseUrl = String.fromEnvironment(
     'API_BASE_URL',
-    defaultValue: 'https://api.staging.catbreeds.invalid',
+    defaultValue: 'https://api.thecatapi.com/v1',
   );
 
   static const _productionApiBaseUrl = String.fromEnvironment(
     'API_BASE_URL',
-    defaultValue: 'https://api.catbreeds.invalid',
+    defaultValue: 'https://api.thecatapi.com/v1',
   );
+
+  static const _apiKey = String.fromEnvironment('CAT_API_KEY');
 }

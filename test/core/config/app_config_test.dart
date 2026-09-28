@@ -9,7 +9,16 @@ void main() {
       expect(config.flavor, Flavor.development);
       expect(config.enableVerboseLogging, isTrue);
       expect(config.enableDeveloperTools, isTrue);
-      expect(config.apiBaseUrl, startsWith('https://'));
+      expect(config.apiBaseUrl, 'https://api.thecatapi.com/v1');
+      expect(config.apiKey, const String.fromEnvironment('CAT_API_KEY'));
+    });
+
+    test('can receive the local API key at compile time', () {
+      const expectKey = bool.fromEnvironment('EXPECT_CAT_API_KEY');
+      if (expectKey) {
+        const config = AppConfig.development();
+        expect(config.apiKey, isNotEmpty);
+      }
     });
 
     test('staging has diagnostics but not developer tools', () {

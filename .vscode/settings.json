@@ -1,0 +1,6 @@
+{
+  "cmake.sourceDirectory": "${workspaceFolder}/windows",
+  "dart.flutterRunAdditionalArgs": [
+    "--dart-define-from-file=.secrets/cat_api.json"
+  ]
+}

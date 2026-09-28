@@ -2,11 +2,13 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
+import 'package:cat_breeds/app/di/app_dependencies.dart';
 import 'package:cat_breeds/core/config/config.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get_it/get_it.dart';
 
 class AppBlocObserver extends BlocObserver {
-  const AppBlocObserver({required this.enableVerboseLogging});
+  const new({required this.enableVerboseLogging});
 
   final bool enableVerboseLogging;
 
@@ -27,7 +29,8 @@ class AppBlocObserver extends BlocObserver {
 
 Future<void> bootstrap({
   required AppConfig config,
-  required FutureOr<Widget> Function() builder,
+  required FutureOr<Widget> Function(GetIt services) builder,
+  GetIt? services,
 }) async {
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
@@ -37,9 +40,8 @@ Future<void> bootstrap({
     enableVerboseLogging: config.enableVerboseLogging,
   );
 
-  // Registra aquí adaptadores transversales que dependan del entorno, por
-  // ejemplo Crashlytics, analítica o un cliente HTTP. No registres secretos:
-  // una aplicación compilada no es un lugar seguro para almacenarlos.
+  final container = services ?? GetIt.instance;
+  configureAppDependencies(container, config);
 
-  runApp(await builder());
+  runApp(await builder(container));
 }

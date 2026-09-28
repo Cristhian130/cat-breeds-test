@@ -21,6 +21,7 @@ migrate_working_dir/
 .project
 .settings/
 .vscode/*
+!.vscode/settings.json
 
 # packages file containing multi-root paths
 .packages.generated
@@ -85,9 +86,14 @@ unlinked_spec.ds
 
 # Coverage
 coverage/
+coverage_badge.svg
 
 # Local project documentation
 docs/
+
+# Credenciales locales (nunca publicar valores reales)
+.secrets/*
+!.secrets/cat_api.example.json
 
 # Submodules
 packages/**/pubspec.lock

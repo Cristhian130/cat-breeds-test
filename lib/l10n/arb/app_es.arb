@@ -1,7 +1,47 @@
 {
     "@@locale": "es",
-    "counterAppBarTitle": "Contador",
-    "@counterAppBarTitle": {
-        "description": "Texto mostrado en la AppBar de la página del contador"
-    }
+    "breedsTitle": "Razas de gatos",
+    "@breedsTitle": {
+        "description": "Título de la página de razas de gatos"
+    },
+    "breedsComingSoon": "El catálogo de razas estará disponible pronto.",
+    "@breedsComingSoon": {
+        "description": "Texto temporal hasta implementar el catálogo"
+    },
+    "exploreTitle": "Explora razas de gatos",
+    "@exploreTitle": {
+        "description": "Título del hero y la sección de exploración de razas"
+    },
+    "exploreSubtitle": "Busca y explora más de 100 razas de gatos fácilmente.",
+    "@exploreSubtitle": {
+        "description": "Texto secundario del hero y la sección de exploración"
+    },
+    "heroCatImageLabel": "Fotografía de una raza de gato",
+    "@heroCatImageLabel": {
+        "description": "Descripción accesible de la fotografía del hero"
+    },
+    "searchBreedsHint": "Busca razas en inglés",
+    "originLabel": "País de origen",
+    "intelligenceLabel": "Inteligencia",
+    "notAvailable": "No disponible",
+    "noBreeds": "Aún no hay razas disponibles.",
+    "noSearchResults": "Ninguna raza coincide con la búsqueda.",
+    "loadingBreeds": "Cargando razas…",
+    "connectionError": "Comprueba la conexión e inténtalo de nuevo.",
+    "accessDenied": "La API rechazó el acceso. Comprueba la clave.",
+    "rateLimit": "Se alcanzó el límite de peticiones. Inténtalo más tarde.",
+    "searchTooLong": "Busca con 30 caracteres o menos.",
+    "genericError": "No pudimos cargar las razas. Inténtalo de nuevo.",
+    "retry": "Reintentar",
+    "loadMore": "Cargar más razas",
+    "moreDetails": "Más…",
+    "breedDetailTitle": "Detalle de raza",
+    "backToCatalog": "Volver a las razas",
+    "loadingBreed": "Cargando raza…",
+    "breedNotFound": "No se encontró esta raza.",
+    "descriptionLabel": "Descripción",
+    "descriptionMissing": "Descripción no disponible.",
+    "adaptabilityLabel": "Adaptabilidad",
+    "lifeSpanLabel": "Esperanza de vida",
+    "yearsLabel": "años"
 }
