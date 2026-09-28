@@ -23,7 +23,7 @@ jobs:
       - run: flutter analyze
       - run: flutter test --coverage
       - run: dart run tool/check_coverage.dart
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: lcov-report
